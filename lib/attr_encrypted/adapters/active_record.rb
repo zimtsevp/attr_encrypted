@@ -32,12 +32,12 @@ if defined?(ActiveRecord::Base)
             end
             private :perform_attribute_assignment
 
-            if ::ActiveRecord::VERSION::STRING > "3.1"
-              alias_method :assign_attributes_without_attr_encrypted, :assign_attributes
-              def assign_attributes(*args)
-                perform_attribute_assignment :assign_attributes_without_attr_encrypted, *args
-              end
-            end
+#             if ::ActiveRecord::VERSION::STRING > "3.1"
+#               alias_method :assign_attributes_without_attr_encrypted, :assign_attributes
+#               def assign_attributes(*args)
+#                 perform_attribute_assignment :assign_attributes_without_attr_encrypted, *args
+#               end
+#             end
 
             alias_method :attributes_without_attr_encrypted=, :attributes=
             def attributes=(*args)
